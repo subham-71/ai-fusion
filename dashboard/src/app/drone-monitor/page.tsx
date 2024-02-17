@@ -8,7 +8,7 @@ export default function Component() {
       <div className="flex items-center gap-4">
         <Link className="flex items-center gap-2 font-semibold" href="#">
           <Package2Icon className="h-6 w-6" />
-          <span className="">Acme Medical</span>
+          <span className="">MediLift</span>
         </Link>
         <h1 className="text-2xl font-semibold">Drone Delivery</h1>
       </div>
