@@ -6,6 +6,7 @@ import { ResponsiveLine } from "@nivo/line"
 import { CardContent, Card, CardTitle, CardHeader } from "@/components/ui/card"
 import { TableHead, TableRow, TableHeader, TableCell, TableBody, Table } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
+import Map from "../drone-map/page"
 
 export default function Component() {
   return (
@@ -82,7 +83,7 @@ export default function Component() {
             <AlertCircleIcon className="w-6 h-6" />
           </CardHeader>
           <CardContent>
-            <div className="h-[300px] bg-gray-200 dark:bg-gray-800" />
+            <Map/>
           </CardContent>
         </Card>
         <Card>
@@ -112,7 +113,7 @@ export default function Component() {
   )
 }
 
-function AlertCircleIcon(props) {
+function AlertCircleIcon(props:any) {
   return (
     <svg
       {...props}
@@ -134,7 +135,7 @@ function AlertCircleIcon(props) {
 }
 
 
-function BarChartIcon(props) {
+function BarChartIcon(props:any) {
   return (
     <svg
       {...props}
@@ -156,7 +157,7 @@ function BarChartIcon(props) {
 }
 
 
-function DatabaseIcon(props) {
+function DatabaseIcon(props:any) {
   return (
     <svg
       {...props}
@@ -178,7 +179,7 @@ function DatabaseIcon(props) {
 }
 
 
-function LockIcon(props) {
+function LockIcon(props:any) {
   return (
     <svg
       {...props}
@@ -199,7 +200,7 @@ function LockIcon(props) {
 }
 
 
-function Package2Icon(props) {
+function Package2Icon(props:any) {
   return (
     <svg
       {...props}
@@ -221,7 +222,7 @@ function Package2Icon(props) {
 }
 
 
-function SettingsIcon(props) {
+function SettingsIcon(props:any) {
   return (
     <svg
       {...props}
@@ -242,7 +243,7 @@ function SettingsIcon(props) {
 }
 
 
-function TimeseriesChart(props) {
+function TimeseriesChart(props:any) {
   return (
     <div {...props}>
       <ResponsiveLine
@@ -326,7 +327,7 @@ function TimeseriesChart(props) {
 }
 
 
-function UsersIcon(props) {
+function UsersIcon(props:any) {
   return (
     <svg
       {...props}

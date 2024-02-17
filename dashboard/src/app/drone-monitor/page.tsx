@@ -58,6 +58,28 @@ export default function Component() {
                 <p>15:30</p>
               </div>
             </div>
+            <div className="flex items-center gap-2">
+              <Package2Icon className="h-6 w-6" />
+              <div className="text-sm">
+                <p className="font-semibold">Cargo</p>
+                <p>Emergency Medical Supplies</p>
+              </div>  
+            </div>
+            <div className="flex items-center gap-2">
+              <Package2Icon className="h-6 w-6" />
+              <div className="text-sm">
+                <p className="font-semibold">Perishable/Non-Perishable</p>
+                <p>Yes</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <CompassIcon className="h-6 w-6" />
+              <div className="text-sm">
+                <p className="font-semibold">Speed</p>
+                <p>60 mph</p>
+              </div>
+            </div>
+
           </CardContent>
         </Card>
         <Card>
@@ -73,8 +95,8 @@ export default function Component() {
               alt="Video feed"
               className="aspect-video rounded-lg object-cover"
               height="225"
-              src="/placeholder.svg"
-              width="400"
+              src="/Drone_delivery.jpeg"
+              width="1200"
             />
           </CardContent>
         </Card>
@@ -114,7 +136,7 @@ export default function Component() {
   )
 }
 
-function BatteryIcon(props) {
+function BatteryIcon(props:any) {
   return (
     <svg
       {...props}
@@ -135,7 +157,7 @@ function BatteryIcon(props) {
 }
 
 
-function CalendarIcon(props) {
+function CalendarIcon(props:any) {
   return (
     <svg
       {...props}
@@ -158,7 +180,7 @@ function CalendarIcon(props) {
 }
 
 
-function CheckCircleIcon(props) {
+function CheckCircleIcon(props:any) {
   return (
     <svg
       {...props}
@@ -179,7 +201,7 @@ function CheckCircleIcon(props) {
 }
 
 
-function ChevronRightIcon(props) {
+function ChevronRightIcon(props:any) {
   return (
     <svg
       {...props}
@@ -199,7 +221,7 @@ function ChevronRightIcon(props) {
 }
 
 
-function ClockIcon(props) {
+function ClockIcon(props:any) {
   return (
     <svg
       {...props}
@@ -220,7 +242,7 @@ function ClockIcon(props) {
 }
 
 
-function CompassIcon(props) {
+function CompassIcon(props:any) {
   return (
     <svg
       {...props}
@@ -241,7 +263,7 @@ function CompassIcon(props) {
 }
 
 
-function MapIcon(props) {
+function MapIcon(props:any) {
   return (
     <svg
       {...props}
@@ -263,7 +285,7 @@ function MapIcon(props) {
 }
 
 
-function Package2Icon(props) {
+function Package2Icon(props:any) {
   return (
     <svg
       {...props}
@@ -285,7 +307,7 @@ function Package2Icon(props) {
 }
 
 
-function RefreshCwIcon(props) {
+function RefreshCwIcon(props:any) {
   return (
     <svg
       {...props}
@@ -308,7 +330,7 @@ function RefreshCwIcon(props) {
 }
 
 
-function VideoOffIcon(props) {
+function VideoOffIcon(props:any) {
   return (
     <svg
       {...props}

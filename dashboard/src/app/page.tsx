@@ -1,113 +1,414 @@
-import Image from "next/image";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
-export default function Home() {
+export default function Component() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="flex flex-col min-h-screen">
+      <header className="bg-gradient-to-b from-gray-900 to-gray-800">
+        <div className="container flex items-center justify-between h-16 px-4 sm:px-6">
+          <nav className="hidden md:flex items-center space-x-4 text-sm font-medium tracking-wide text-gray-300">
+            <Link className="text-gray-50 hover:text-gray-50/75" href="/admin">
+              Admin
+            </Link>
+            <Link className="text-gray-50 hover:text-gray-50/75" href="/drone-monitor">
+              Drone Operator
+            </Link>
+            <Link className="text-gray-50 hover:text-gray-50/75" href="/ngo-page">
+              NGO
+            </Link>
+            <Link className="text-gray-50 hover:text-gray-50/75" href="/help">
+              Help
+            </Link>
+          </nav>
+          <Link
+            className="flex items-center space-x-2 font-bold text-gray-50 md:space-x-3 hover:text-gray-50/75"
+            href="#"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <DropletIcon className="w-6 h-6 md:w-8 md:h-8" />
+            Medilift
+          </Link>
+          <div className="flex items-center space-x-4">
+            <Link className="inline-flex items-center space-x-2 text-gray-300 hover:text-gray-50/75" href="#">
+              <UserIcon className="w-4 h-4" />
+              <span className="text-sm font-medium md:font-normal">Sign In</span>
+            </Link>
+            <Button size="sm" variant="outline">
+              Contact Sales
+            </Button>
+          </div>
         </div>
-      </div>
+      </header>
+      <main className="flex-1">
+        <div className="bg-gray-100 border-t border-b border-gray-200 dark:border-gray-800">
+          <div className="container flex flex-col items-center justify-center py-12 text-center md:py-20 lg:py-32">
+            <img alt="Image" className="mx-auto aspect-square m-4" height="300" src="/Medilift_logo.png" width="300" />
+            <div className="max-w-[500px] space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Delivering hope with every flight.</h1>
+              <p className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Medilift connects remote communities with life-saving medical supplies using advanced drone delivery
+                technology.
+              </p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-4">
+            <div className="flex items-center gap-2 p-4 md:col-span-2 md:px-6 lg:px-12">
+              <CheckCircleIcon className="w-6 h-6 text-gray-500" />
+              <div className="leading-none">
+                <h3 className="font-semibold">Efficient Delivery</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Rapid transport of medical essentials to remote locations.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 p-4 md:col-span-2 md:px-6 lg:px-12">
+              <CheckCircleIcon className="w-6 h-6 text-gray-500" />
+              <div className="leading-none">
+                <h3 className="font-semibold">Secure Transport</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Safe and reliable delivery with cutting-edge drone technology.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 p-4 md:col-span-2 md:px-6 lg:px-12">
+              <CheckCircleIcon className="w-6 h-6 text-gray-500" />
+              <div className="leading-none">
+                <h3 className="font-semibold">Life-Saving Access</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Providing healthcare access to underserved communities.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 p-4 md:col-span-2 md:px-6 lg:px-12">
+              <CheckCircleIcon className="w-6 h-6 text-gray-500" />
+              <div className="leading-none">
+                <h3 className="font-semibold">Scalable Solutions</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Customized delivery services to meet diverse medical needs.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="container flex flex-col items-center justify-center py-12 space-y-4 text-center md:space-y-6 md:py-24 lg:space-y-8 lg:py-32">
+            <div className="max-w-[600px] space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Transforming Healthcare Delivery
+              </h2>
+              <p className="text-gray-500 md:text-xl/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Medilift's innovative approach to medical logistics ensures timely and efficient delivery of essential
+                supplies, enabling healthcare providers to save lives and improve patient outcomes.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+              <Link
+                className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+                href="#"
+              >
+                Contact Sales
+              </Link>
+              <Link
+                className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                href="#"
+              >
+                Tour the Platform
+              </Link>
+            </div>
+          </div>
+          <div className="bg-gray-100 border-t border-b border-gray-200 dark:border-gray-800">
+            <div className="container flex flex-col items-center justify-center py-12 space-y-4 text-center md:space-y-6 md:py-24 lg:space-y-8 lg:py-32">
+              <div className="max-w-[600px] space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                  The Future of Medical Logistics
+                </h2>
+                <p className="text-gray-500 md:text-xl/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  Medilift's advanced drone delivery system is designed to revolutionize the way medical supplies are
+                  transported, leveraging autonomous aircraft to overcome logistical challenges and reach remote areas
+                  with precision and speed.
+                </p>
+              </div>
+              <img
+                alt="Image"
+                className="aspect-video overflow-hidden rounded-xl object-cover object-center"
+                height="400"
+                src="/placeholder.svg"
+                width="800"
+              />
+            </div>
+          </div>
+          <div className="container flex flex-col items-center justify-center py-12 space-y-4 text-center md:space-y-6 md:py-24 lg:space-y-8 lg:py-32">
+            <div className="max-w-[600px] space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Enabling Rapid Response</h2>
+              <p className="text-gray-500 md:text-xl/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Medilift's drone delivery platform offers a reliable and agile solution for transporting medical
+                equipment, vaccines, and essential supplies during emergencies and humanitarian crises, ensuring that
+                aid reaches those in need when time is of the essence.
+              </p>
+            </div>
+            <div className="grid max-w-sm gap-4 row-gap-0 mx-auto items-start sm:max-w-3xl sm:grid-cols-2 lg:gap-6 lg:max-w-5xl lg:grid-cols-4">
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Mobile Clinics</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Equipped with essential medical supplies to provide care in remote areas.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Emergency Kits</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Rapid deployment of aid packages for disaster relief efforts.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Vaccine Delivery</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Transporting vaccines to immunize communities against diseases.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Medical Supplies</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Delivering essential medical equipment to support healthcare facilities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="container flex flex-col items-center justify-center py-12 space-y-4 text-center md:space-y-6 md:py-24 lg:space-y-8 lg:py-32">
+            <div className="max-w-[600px] space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Seamless Integration</h2>
+              <p className="text-gray-500 md:text-xl/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Medilift's platform is designed to integrate with existing healthcare systems, allowing for the
+                efficient coordination of deliveries and the prioritization of critical medical shipments, all managed
+                through a user-friendly interface.
+              </p>
+            </div>
+            <div className="grid max-w-sm gap-4 row-gap-0 mx-auto items-start sm:max-w-3xl sm:grid-cols-2 lg:gap-6 lg:max-w-5xl lg:grid-cols-4">
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Healthcare Providers</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Enabling clinics and hospitals to request and receive medical supplies.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Logistics Teams</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Managing the scheduling and routing of drone deliveries for efficient operations.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Community Leaders</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Collaborating to identify healthcare needs and support initiatives for health outreach.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Emergency Response</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Coordinating the delivery of medical aid during crises and emergencies.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-100 border-t border-b border-gray-200 dark:border-gray-800">
+            <div className="container flex flex-col items-center justify-center py-12 space-y-4 text-center md:space-y-6 md:py-24 lg:space-y-8 lg:py-32">
+              <div className="max-w-[600px] space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">The Power of Innovation</h2>
+                <p className="text-gray-500 md:text-xl/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                  Medilift's commitment to advancing healthcare delivery through technology is exemplified by the
+                  seamless integration of its drone platform, empowering stakeholders to leverage the capabilities of
+                  unmanned aerial vehicles for the benefit of their communities.
+                </p>
+              </div>
+              <img
+                alt="Image"
+                className="aspect-[4/1] overflow-hidden rounded-xl object-cover object-center"
+                height="300"
+                src="/placeholder.svg"
+                width="1200"
+              />
+            </div>
+          </div>
+          <div className="container flex flex-col items-center justify-center py-12 space-y-4 text-center md:space-y-6 md:py-24 lg:space-y-8 lg:py-32">
+            <div className="max-w-[600px] space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Delivering Impact</h2>
+              <p className="text-gray-500 md:text-xl/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Medilift's mission goes beyond transportation; it is about making a difference in the lives of
+                individuals by ensuring that essential medical care reaches them when and where it is needed, no matter
+                the obstacles that stand in the way.
+              </p>
+            </div>
+            <div className="grid max-w-sm gap-4 row-gap-0 mx-auto items-start sm:max-w-3xl sm:grid-cols-2 lg:gap-6 lg:max-w-5xl lg:grid-cols-4">
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Hopeful Communities</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Embracing the promise of better health through access to medical services.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Empowered Caregivers</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Equipped with the tools to provide compassionate care to their patients.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Innovative Partners</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Collaborating to harness the potential of technology for social good.
+                </p>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <img
+                  alt="Image"
+                  className="aspect-square rounded-lg object-cover object-center"
+                  height="200"
+                  src="/placeholder.svg"
+                  width="200"
+                />
+                <h3 className="font-semibold">Global Impact</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Extending the reach of healthcare to underserved regions around the world.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="container flex flex-col items-center justify-center py-12 space-y-4 text-center md:space-y-6 md:py-24 lg:space-y-8 lg:py-32" />
+        </div>
+      </main>
+    </div>
+  )
+}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+function CheckCircleIcon(props:any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  )
+}
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+function DropletIcon(props:any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+    </svg>
+  )
+}
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+function UserIcon(props:any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  )
 }

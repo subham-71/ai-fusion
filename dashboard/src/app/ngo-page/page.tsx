@@ -151,7 +151,7 @@ export default function Component() {
   )
 }
 
-function Package2Icon(props) {
+function Package2Icon(props:any) {
     return (
       <svg
         {...props}
